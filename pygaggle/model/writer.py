@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import List, Optional
 import abc
 
-from pygaggle.data.relevance import RelevanceExample
+from ..data.relevance import RelevanceExample
 
 __all__ = ['Writer', 'MsMarcoWriter', 'TrecWriter']
 

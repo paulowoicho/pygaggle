@@ -10,8 +10,8 @@ import numpy as np
 from tqdm import tqdm
 
 from .relevance import RelevanceExample, Cord19AbstractLoader
-from pygaggle.rerank.base import Query, Text
-from pygaggle.data.unicode import convert_to_unicode
+from ..rerank.base import Query, Text
+from ..data.unicode import convert_to_unicode
 import xml.etree.ElementTree as ElementTree
 
 

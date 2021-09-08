@@ -11,8 +11,8 @@ import numpy as np
 from tqdm import tqdm
 
 from .relevance import RelevanceExample, MsMarcoPassageLoader
-from pygaggle.rerank.base import Query, Text
-from pygaggle.data.unicode import convert_to_unicode
+from ..rerank.base import Query, Text
+from ..data.unicode import convert_to_unicode
 
 
 __all__ = ['MsMarcoExample', 'MsMarcoDataset']

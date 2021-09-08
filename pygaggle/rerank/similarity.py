@@ -2,7 +2,7 @@ import abc
 
 import torch
 
-from pygaggle.model.encode import SingleEncoderOutput
+from ..model.encode import SingleEncoderOutput
 
 
 __all__ = ['SimilarityMatrixProvider', 'CosineSimilarityMatrixProvider']

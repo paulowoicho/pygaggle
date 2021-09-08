@@ -7,7 +7,7 @@ import re
 
 from pyserini.search import SimpleSearcher
 
-from pygaggle.rerank.base import Query, Text
+from ..rerank.base import Query, Text
 
 __all__ = ['RelevanceExample', 'Cord19DocumentLoader', 'Cord19AbstractLoader']
 

@@ -1,6 +1,6 @@
 import spacy
 import numpy as np
-from pygaggle.rerank.base import Text
+from ..rerank.base import Text
 from typing import List
 from dataclasses import dataclass
 from copy import deepcopy

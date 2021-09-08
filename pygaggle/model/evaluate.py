@@ -10,12 +10,12 @@ import numpy as np
 import string
 import regex as re
 
-from pygaggle.data.kaggle import RelevanceExample
-from pygaggle.data.retrieval import RetrievalExample
-from pygaggle.rerank.base import Reranker
-from pygaggle.qa.base import Reader
-from pygaggle.model.writer import Writer, MsMarcoWriter
-from pygaggle.data.segmentation import SegmentProcessor
+from ..data.kaggle import RelevanceExample
+from ..data.retrieval import RetrievalExample
+from ..rerank.base import Reranker
+from ..qa.base import Reader
+from ..model.writer import Writer, MsMarcoWriter
+from ..data.segmentation import SegmentProcessor
 
 __all__ = ['RerankerEvaluator', 'DuoRerankerEvaluator', 'metric_names']
 METRIC_MAP = OrderedDict()

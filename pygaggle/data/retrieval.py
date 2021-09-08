@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import List
 
-from pygaggle.qa.base import Question, Context
+from ..qa.base import Question, Context
 
 
 @dataclass

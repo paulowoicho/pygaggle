@@ -13,7 +13,7 @@ import torch
 from sentence_transformers import CrossEncoder
 from .base import Reranker, Query, Text
 from .similarity import SimilarityMatrixProvider
-from pygaggle.model import (BatchTokenizer,
+from ..model import (BatchTokenizer,
                             LongBatchEncoder,
                             QueryDocumentBatch,
                             DuoQueryDocumentBatch,
