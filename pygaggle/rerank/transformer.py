@@ -65,14 +65,14 @@ class MonoT5(Reranker):
                   *args, device: str = None, **kwargs) -> T5ForConditionalGeneration:
         device = device or ('cuda' if torch.cuda.is_available() else 'cpu')
         device = torch.device(device)
-        return AutoModelForSeq2SeqLM.from_pretrained(pretrained_model_name_or_path,
+        return AutoModelForSeq2SeqLM.from_pretrained(pretrained_model_name_or_path, cache_dir="/shared/models/t5_reranker",
                                                           *args, **kwargs).to(device).eval()
 
     @staticmethod
     def get_tokenizer(pretrained_model_name_or_path: str,
                       *args, batch_size: int = 8, **kwargs) -> T5BatchTokenizer:
         return T5BatchTokenizer(
-            AutoTokenizer.from_pretrained(pretrained_model_name_or_path, use_fast=False, *args, **kwargs),
+            AutoTokenizer.from_pretrained(pretrained_model_name_or_path, cache_dir="/shared/models/t5_reranker", use_fast=False, *args, **kwargs),
             batch_size=batch_size
         )
     @staticmethod
@@ -232,13 +232,13 @@ class MonoBERT(Reranker):
                   *args, device: str = None, **kwargs) -> AutoModelForSequenceClassification:
         device = device or ('cuda' if torch.cuda.is_available() else 'cpu')
         device = torch.device(device)
-        return AutoModelForSequenceClassification.from_pretrained(pretrained_model_name_or_path,
+        return AutoModelForSequenceClassification.from_pretrained(pretrained_model_name_or_path, cache_dir="/shared/models/bert_reranker",
                                                                   *args, **kwargs).to(device).eval()
 
     @staticmethod
     def get_tokenizer(pretrained_model_name_or_path: str = 'bert-large-uncased',
                       *args, **kwargs) -> AutoTokenizer:
-        return AutoTokenizer.from_pretrained(pretrained_model_name_or_path, use_fast=False, *args, **kwargs)
+        return AutoTokenizer.from_pretrained(pretrained_model_name_or_path, cache_dir="/shared/models/bert_reranker", use_fast=False, *args, **kwargs)
 
     @torch.no_grad()
     def rescore(self, query: Query, texts: List[Text]) -> List[Text]:
