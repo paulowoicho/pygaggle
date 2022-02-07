@@ -70,7 +70,7 @@ class MonoT5(Reranker):
 
     @staticmethod
     def get_tokenizer(pretrained_model_name_or_path: str,
-                      *args, batch_size: int = 8, **kwargs) -> T5BatchTokenizer:
+                      *args, batch_size: int = 512, **kwargs) -> T5BatchTokenizer:
         return T5BatchTokenizer(
             AutoTokenizer.from_pretrained(pretrained_model_name_or_path, cache_dir="/shared/models/t5_reranker", use_fast=False, *args, **kwargs),
             batch_size=batch_size
